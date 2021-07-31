@@ -26,9 +26,9 @@ fs.readFile('./plain.txt', { encoding: 'utf-8' }, (err, data) => {
         data: globalData
     }
 
-    const puft = new Uint8Array(Buffer.from(JSON.stringify(result)));
+    const objectBuffer = new Uint8Array(Buffer.from(JSON.stringify(result)));
 
-    fs.writeFile('result.json', puft, (err) => {
+    fs.writeFile('result.json', objectBuffer, (err) => {
         if(err) throw err;
 
         console.log(chalk.green('✅ The file has saved to result.json'));
