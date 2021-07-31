@@ -1,5 +1,7 @@
 # node_modules
 /node_modules
 
-# .DS_Store
+# Files
 .DS_Store
+result.json
+progress.js
