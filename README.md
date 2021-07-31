@@ -1,12 +1,10 @@
-# Plain Text to Json
+# Plain Text to JSON
 Convert `.txt` file to `.json` file
-
 
 > Tech Stack:
 
 ![alt text](https://i.imgur.com/nYUwci7.jpg "JavaScript") 
 ![alt text](https://i.imgur.com/AvoEJhZ.png "Node.js") 
-
 
 ### How to use:
 1. Provide the file you want to convert named with `plain.txt`
