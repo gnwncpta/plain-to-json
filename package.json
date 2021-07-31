@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/gnwncpta/plain-to-json#readme",
   "devDependencies": {
-    "chalk": "^4.1.2"
+    "chalk": "^4.1.2",
+    "progress": "^2.0.3"
   }
 }
