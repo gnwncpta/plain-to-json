@@ -1,3 +1,5 @@
+// You can change the structure if you want! -> Delete this line
+
 George Bluth | George | Bluth | george.bluth@gmail.com
 Janet Weaver | Janet | Weaver | janet.weaver@gmail.com
 Emma Wong | Emma | Wong | emma.wong@gmail.com
