@@ -14,6 +14,7 @@ Convert `.txt` file to `.json` file
 ### ❗️ Important
 - I already give the plain.txt file
 - You can modify the file as want as you want
+- If you want to modify also make sure to modify the `index.js`
 
 ### 🔰 Result: 
 - The output file would be `result.json`
