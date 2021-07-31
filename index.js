@@ -3,15 +3,20 @@ const chalk = require('chalk');
 let globalData = [];
 
 fs.readFile('./plain.txt', { encoding: 'utf-8' }, (err, data) => {
-    if(err) throw err;
+    if(err){
+        return console.log(`❌ ${chalk.bgRed.black(' Error ')} Maybe the file name doesn't correct!`);
+    }
 
-    console.log(chalk.green('✅ Success read data from plain.txt\n'));
     let arr = data.split('\n');
 
     arr.forEach(item => {
         let spl = item.split(' | ');
+
+        // Edit the destructuring array name as want as you want
         const [ fullName, firstName, lastName, email ] = spl;
 
+        // Edit the key object 
+        // if you want to modify as want as you want
         globalData.push(
             {
                 "full_name": fullName,
@@ -31,7 +36,7 @@ fs.readFile('./plain.txt', { encoding: 'utf-8' }, (err, data) => {
     fs.writeFile('result.json', objectBuffer, (err) => {
         if(err) throw err;
 
-        console.log(chalk.green('✅ The file has saved to result.json'));
+        console.log(chalk.green('✅ Success created result.json'));
     });
 
 });
