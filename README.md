@@ -11,5 +11,9 @@ Convert `.txt` file to `.json` file
 2. Provide the file with the format like this `Full Name | First Name | Last Name | Email`
 3. Finally, Run the code by type `npm start`
 
+### Important
+- I already give the plain.txt file
+- You can modify the file as want as you want
+
 ### Result: 
 - The output file would be `result.json`
