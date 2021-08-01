@@ -1,10 +1,12 @@
 const fs = require('fs');
-const chalk = require('chalk');
+const success = require('./dir/success');
+const error = require('./dir/error');
+
 let globalData = [];
 
 fs.readFile('./plain.txt', { encoding: 'utf-8' }, (err, data) => {
     if(err){
-        return console.log(`❌ ${chalk.bgRed.black(' Error ')} Maybe the file name doesn't correct!`);
+        error();
     }
 
     let arr = data.split('\n');
@@ -36,7 +38,7 @@ fs.readFile('./plain.txt', { encoding: 'utf-8' }, (err, data) => {
     fs.writeFile('result.json', objectBuffer, (err) => {
         if(err) throw err;
 
-        console.log(chalk.green('✅ Success created result.json'));
+        success();
     });
 
 });
