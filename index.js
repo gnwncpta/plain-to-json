@@ -15,7 +15,7 @@ fs.readFile('./plain.txt', { encoding: 'utf-8' }, (err, data) => {
         // Edit the destructuring array name as want as you want
         const [ fullName, firstName, lastName, email ] = spl;
 
-        // Edit the key object 
+        // | Edit the key object |
         // if you want to modify as want as you want
         globalData.push(
             {
