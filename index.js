@@ -1,12 +1,14 @@
 const fs = require('fs');
 const success = require('./dir/success');
 const error = require('./dir/error');
+const fileSize = require('file-size');
 
 let globalData = [];
 
-fs.readFile('./plain.txt', { encoding: 'utf-8' }, (err, data) => {
+// If you have another .txt file make sure change the file name on fs.readFile()
+fs.readFile('./nordvpn.txt', { encoding: 'utf-8' }, (err, data) => {
     if(err){
-        error();
+        return error();
     }
 
     let arr = data.split('\n');
@@ -15,16 +17,14 @@ fs.readFile('./plain.txt', { encoding: 'utf-8' }, (err, data) => {
         let spl = item.split(' | ');
 
         // Edit the destructuring array name as want as you want
-        const [ fullName, firstName, lastName, email ] = spl;
+        const [ email, password ] = spl;
 
         // | Edit the key object |
         // if you want to modify as want as you want
         globalData.push(
             {
-                "full_name": fullName,
-                "first_name": firstName,
-                "last_name": lastName,
-                "email": email
+                "email": email,
+                "password": password
             }
         );
     });
@@ -38,7 +38,10 @@ fs.readFile('./plain.txt', { encoding: 'utf-8' }, (err, data) => {
     fs.writeFile('result.json', objectBuffer, (err) => {
         if(err) throw err;
 
-        success();
+        let stats = fs.statSync('result.json');
+        let fileSizeInBytes = stats.size;
+        
+        success(fileSizeInBytes);
     });
 
 });
